@@ -14,7 +14,6 @@
 
 <main id="app">
     <section class="content" @click="toggleDisplay">
-
         <div class="text-container">
             <h2 v-show="!showDescription">{{ currentItem.title }}</h2>
             <p v-show="showDescription">{{ currentItem.desc }}</p>
@@ -36,15 +35,14 @@
 </footer>
 
 <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
-<script type="module">
-    import { items } from 'data/items.js';
-
+<script src="data/data.js"></script>
+<script>
     const app = Vue.createApp({
         data() {
             return {
-                items: items,
+                items: data,
                 currentIndex: 0,
-                showDescription: false,
+                showDescription: false
             };
         },
         computed: {
@@ -70,6 +68,6 @@
     });
     app.mount('#app');
 </script>
-
 </body>
 </html>
+
